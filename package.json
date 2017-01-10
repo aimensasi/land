@@ -1,0 +1,43 @@
+{
+  "name": "land",
+  "version": "1.0.0",
+  "description": "a Landing page designed by Peter Finlan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimensasi/land.git"
+  },
+  "keywords": [
+    "Landing",
+    "Page",
+    "Design",
+    "Front",
+    "end",
+    "development"
+  ],
+  "author": "Aimen.S.A.Sasi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aimensasi/land/issues"
+  },
+  "homepage": "https://github.com/aimensasi/land#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "imagemin-pngcrush": "^5.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.1.1"
+  }
+}
