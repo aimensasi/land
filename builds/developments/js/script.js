@@ -5,17 +5,20 @@ $(document).ready(function(){
 
 	$('#profile').on('click', function(){
 		
-		if ($dropdownMenu.css('opacity') == '0') {
-			$('.dropdown-menu').css('opacity', '1');	
+		if ($dropdownMenu.css('visibility') == 'hidden') {
+			$dropdownMenu.addClass('visibles');
 		}else{
-			$('.dropdown-menu').css('opacity', '0');	
+			$dropdownMenu.removeClass('visibles');
 		}
+
+
 	});
 
 	$(document).on('click', function(){
-		if ($dropdownMenu.css('opacity') == '1') {
-			$('.dropdown-menu').css('opacity', '0');	
+		if ($dropdownMenu.css('visibility') == 'visible') {
+			$dropdownMenu.removeClass('visibles');
 		}
 	});
+
 });
 },{}]},{},[1])

@@ -46,11 +46,12 @@ header.header{
 			}
 		}
 		.dropdown-menu{
-			display: inline;
+			display: initial;
 			min-width: 300px;
 			left: -221px;
+			visibility: hidden;
 			opacity: 0;
-			transition: opacity .5s,transform .5s,visibility 0s .5s;
+			transition: opacity .5s,visibility .5s;
 			transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 			.dropdown-header{
 				background: $font-secondary;
@@ -208,6 +209,9 @@ and (max-device-width : 568px)
 and (orientation : portrait) {
 	header.header{
 		height: 100vh;
+		.navbar-nav{
+			// background: #fff;
+		}
 		.header-content{
 			.title{
 				margin-top: 70px;
