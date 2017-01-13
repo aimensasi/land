@@ -37,10 +37,15 @@ body{
 }
 
 .flex{
-	display: flex;
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+  -webkit-flex-direction: row;
 	flex-direction: row;
 }
 .flex-col{
+	-webkit-flex-direction: column;
 	flex-direction: column;
 }
 
@@ -62,7 +67,8 @@ body{
 	opacity: 1 !important;
 }
 
-
-
+.only-small{
+	display: none;
+}
 
 

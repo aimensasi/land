@@ -3,6 +3,22 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
-	height: $height;
+	// height: $height;
 	width: $width;
+}
+
+@mixin gradient() {
+	background: #663FB5; /* fallback for old browsers */
+	background: -webkit-linear-gradient(45deg, #663FB5 , #2B8BE3); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(45deg, #663FB5 , #2B8BE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@keyframes fadeIn{
+	0% {top: 420px;}
+	100% {top: 20px;}
+}
+
+@-webkit-keyframes fadeIn{
+	0% {top: 420px;}
+	100% {top: 20px;}	
 }

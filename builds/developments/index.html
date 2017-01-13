@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Land.io</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="icon" href="images/favicon-32x32.png">
+    <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -25,7 +27,7 @@
               <img src="images/logo.png" alt="Logo">
             </a>
 
-            <div class=" navbar-collapse" id="navbarNav">
+            <div class="navbar-collapse collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
                   <a class="nav-link link-to" href="#"><small>NEW</small> Slides <span class="sr-only">(current)</span></a>
@@ -39,9 +41,9 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="profile" 
                   aria-haspopup="true" aria-expanded="false">
-                    <img src="images/peter.png" width="42" height="42" alt="User" class="rounded-circle profile-pic">
+                    <img src="images/peter.png" width="42" height="42" alt="User" class="rounded-circle profile-pic"> <span class="only-small">Peter Finlan</span>
                   </a>
-                  <div class="dropdown-menu dropdown-menu-animated" aria-labelledby="profile">
+                  <div class="dropdown-menu" aria-labelledby="profile">
                     <div class="dropdown-header flex">
                       <img src="images/peter.png" width="63" height="63" alt="User" class="rounded-circle profile-pic">
                       <div class="user-info">
@@ -74,7 +76,7 @@
               <img src="images/sketch-icon.png" alt="sketch" class="sketch-icon">
               Sketch included
             </button>
-            <div class="flex social-row center-content">
+            <div class="flex social-row center-content" >
               <a href="#" class="link-to social">
                 <img src="images/twitter-icon.png" alt="twitter">
                 1024
@@ -96,13 +98,14 @@
 
       <!-- intro Section -->
       <!-- ==================================================================== -->
-      <section class="row intro">
+      <section class="row intro" id="intro-section">
         <div class="container">
           <h2 class="title">Build your beautiful UI, the way you want it, with Land.io</h2>
           <h5 class="title-small">
             Craft memorable, emotive experiences with our range of beautiful UI elements.
           </h5>
-          <img src="images/mock.png" alt="mock" class="mock">
+          <img src="images/mock.png" alt="mock" class="mock lg-mock" id="mock">
+          <img src="images/iphone_tall.png" width="220" alt="mock" class="mock sm-mock" id="mock-small">
         </div>
       </section>
       <!-- End Of intro Section -->
@@ -113,36 +116,36 @@
       <section class="row feature">
         <div class="container flex">
           <div class="col-md-4">
-            <div class="row header">
-              <img src="images/pen.png" alt="Pen">
+            <div class="row block-header flex flex-col">
+              <img src="images/pen.png" alt="Pen" width="90">
               <h2 class="title">250</h2>
               <h5 class="title-small">UI Elements</h5>
             </div>
-            <div class="row body">
+            <div class="row block-body">
               <p class="lead">
                 Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras eu adipiscing ac cras at sem cras per senectus eu parturient quam.
               </p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="row header">
-              <img src="images/ultra.png" alt="Ultra">
+            <div class="row block-header flex flex-col">
+              <img src="images/ultra.png" alt="Ultra" width="90">
               <h2 class="title">Ultra</h2>
               <h5 class="title-small">Modren Design</h5>
             </div>
-            <div class="row body">
+            <div class="row block-body">
               <p class="lead">
                 Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras eu adipiscing ac cras at sem cras per senectus eu parturient quam.
               </p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="row header">
-              <img src="images/heart.png" alt="Heart">
+            <div class="row block-header flex flex-col">
+              <img src="images/heart.png" alt="Heart" width="90">
               <h2 class="title">Free</h2>
               <h5 class="title-small">Forever and ever</h5>
             </div>
-            <div class="row body">
+            <div class="row block-body">
               <p class="lead">
                 Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras eu adipiscing ac cras at sem cras per senectus eu parturient quam.
               </p>
@@ -156,25 +159,10 @@
       <!-- Video Section -->
       <!-- ==================================================================== -->
       <section class="row video-section">
-        <div class="video-player">
-          <video loop poster="images/Morning-Routine.jpg" class="video" controls>
-            <source src="images/Morning-Routine.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="images/Morning-Routine.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-          </video>
-          <img src="images/play.png" alt="play" class="play-icon" id="play">
-          <div class="control-bar">
-            <span class="min-time time"></span>
-            <div class="volum-control">
-              <img src="images/mute-icon.png" alt="mute" class="mute-icon" id="mute">
-              <div class="volum-bar">
-                <div class="volumn-level"></div>
-                <div class="volumn-handle"></div>
-              </div>
-              <img src="images/sound-icon.png" alt="sound" class="sound-icon" id="sound">  
-            </div>
-            <span class="max-time time"></span>
-          </div>
-        </div>
+        <video poster="images/Morning-Routine.jpg" class="video video-js vjs-default-skin" id="video-player" data-setup="{}">
+          <source src="images/oceans.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="images/oceans.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
       </section>
       <!-- End Of Video Section -->
       <!-- ==================================================================== -->
@@ -473,7 +461,15 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js
+    "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
+
+
   	<script src="js/script.js"></script>
+
   </body>
 </html>
 

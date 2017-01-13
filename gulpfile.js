@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyHtml = require('gulp-minify-html'),
     imagemin = require('gulp-imagemin'),
-    pngCruch = require('imagemin-pngcrush');
+    pngCruch = require('imagemin-pngcrush'),
+    browserSync = require('browser-sync').create();
 
 
 var env,
@@ -26,7 +27,8 @@ env = process.env.NODE_ENV || 'developments';
 if(env === 'developments'){
     outputDir = 'builds/developments';
     sassconfig = 'outputStyle';
-    outputStyle = 'expanded';
+    outputStyle = ':expanded';
+
 }else{
     outputDir = 'builds/productions';
     sassconfig = 'config_file';
@@ -40,6 +42,7 @@ htmlsrc = 'builds/developments/*.html'
 imgSrc = 'builds/developments/images/*.*';
 
 gulp.task('compass', function(){
+    console.log(outputStyle);
     gulp.src(sassStyleSrc)
         .pipe(compass({
             sass: 'components/sass', 
@@ -90,9 +93,17 @@ gulp.task('watch', function(){
     gulp.watch(allSassSrc, ['compass']);
     gulp.watch(htmlsrc, ['html']);
     gulp.watch(imgSrc, ['images']);
+    // browserSync.reload();
 });
 
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: outputDir
+        }
+    });
+});
 
-gulp.task('default', ['html', 'js', 'compass', 'connect', 'images', 'watch']);
+gulp.task('default', ['html', 'js', 'compass', 'browser-sync', 'images', 'watch']);
 
 

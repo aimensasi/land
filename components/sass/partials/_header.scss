@@ -21,6 +21,7 @@
 header.header{
 	@include imageCover('../images/bg-image.png', 100%, 800px);	
 	padding-top: 20px;
+	padding-bottom: 30px;
 	.navbar{
 		.navbar-brand{
 			margin-right: auto;
@@ -91,9 +92,7 @@ header.header{
 				color: $gray-faded;
 			}
 			.dropdown-item.edit-link{
-				background: #663FB5; /* fallback for old browsers */
-				background: -webkit-linear-gradient(45deg, #663FB5 , #2B8BE3); /* Chrome 10-25, Safari 5.1-6 */
-				background: linear-gradient(45deg, #663FB5 , #2B8BE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				@include gradient();
 				width: 40px;
 				height: 40px;
 				border-radius: 50%;
@@ -105,7 +104,9 @@ header.header{
 				margin-bottom: 10px;        
 				box-shadow: 3.1px 2.2px 10px $font-primary;
 				border: none;
-				.edit-pen{
+				transition: opacity .9s;
+				&:hover{
+					opacity: .7;
 				}
 			}
 		}
@@ -115,6 +116,7 @@ header.header{
 	.header-content{
 		text-align: center;
 		color: $font-secondary;
+		height: 90%;
 		.title{
 			margin-top: 195px;
 			font: $font-regular;
@@ -153,7 +155,7 @@ header.header{
 	}
 
 	.social-row{
-		margin-top: 175px;
+		margin-top: 90px;
 		.social{
 			padding-right: 15px;
 			padding-left: 20px;
@@ -194,7 +196,7 @@ and (min-width : 1445px) {
 @media only screen
 and (max-width : 1019px) {
 	header.header{
-		height: 750px;
+		// height: 750px;
 		.header-content{
 			.title{
 				font-size: 3.5rem;
@@ -207,19 +209,110 @@ and (max-width : 1019px) {
 and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : portrait) {
+	.container-fluid{
+		position: relative;
+	}
+	.container, .navbar{
+		position: initial;
+	}
+
+	.only-small{
+		display: inline;
+
+	}
+
 	header.header{
-		height: 100vh;
-		.navbar-nav{
-			// background: #fff;
+		// height: 100vh;
+		.navbar-toggler{
+			z-index: 2;
+			// border: none;
+			height: 2.2em;
+			.navbar-toggler-icon{
+				background: #fff;
+				height: 1.5px;
+				position: relative;
+				&::after,
+				&::before{
+					content: '';
+					background: #fff;
+					width: 1.5em;
+					height: 1.5px;
+					position: absolute;
+					left: 0;
+					transition: transform .5s, background .5s;
+				}
+				&::after{
+					top: -10px;
+				}
+				&::before{
+					bottom: -10px;
+				}
+			}
+			.open-toggler{
+				background: transparent;	
+				&::after{
+					top: 0;
+					-ms-transform: rotate(-45deg); /* IE 9 */
+			    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+			    transform: rotate(-45deg);
+				}
+				&::before{
+					bottom: 0;
+					-ms-transform: rotate(45deg); /* IE 9 */
+			    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+			    transform: rotate(45deg);
+				}
+			}
+		}
+		.navbar-collapse{
+			@include gradient();
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100% !important;
+			padding-bottom: 50px;
+			z-index: 1;
+			height: 100%;
+			// overflow-y: auto;
+			.navbar-nav{
+				margin-top: 40px;
+				.nav-item{
+					text-align: center;
+					margin-bottom: 20px;
+					.nav-link{
+						font-size: 1.6rem;
+						small{
+							font-size: 1.3rem;
+						}
+					}
+				}
+			}
 		}
 		.header-content{
+			height: 100%;
 			.title{
 				margin-top: 70px;
 				font-size: 2.1rem;
 			}
 			.social-row{
-				margin-top: 60px;
+				margin-top: 50px;
+			}
+		}
+		.navbar-nav{
+			.dropdown-menu{
+				width: 40%;
+				min-width: 80%;
+				text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
 
+				.dropdown-header{
+					display: none;
+				}
+				.edit-link{
+					display: none;
+				}
 			}
 		}
 	}

@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/aimensasi/land#readme",
   "devDependencies": {
+    "browser-sync": "^2.18.6",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-compass": "^2.1.0",
@@ -38,6 +39,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "scrollmagic": "^2.0.5"
   }
 }

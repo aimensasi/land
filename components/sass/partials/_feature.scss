@@ -1,0 +1,43 @@
+.feature{
+	padding: 40px 2px;
+	.block-header{
+		text-align: center;
+		margin-top: 30px;
+		img{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.title{
+			font-size: 25px;
+			font-weight: 600;
+			margin-top: 19px;
+		}
+		.title-small{
+			font-size: 19px;
+			font-weight: 400;
+		}
+	}
+	.block-body{
+		margin-top: 15px;
+		.lead{
+			text-align: center;
+			font-size: 17px;
+			font-weight: 200;
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	.feature{
+		.container{
+			flex-direction: column;
+		}
+	}
+	
+}
