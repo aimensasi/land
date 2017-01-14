@@ -1,35 +1,85 @@
 .video-section{
-	position: relative;
-	width: 100%;
-	height: 760px;
-	z-index: 1;
-	background: $bg-inverse;
-	.video{
-		position: absolute;
-		width: 100%;
+	border-right: none;
+	border-left: none;
+	position: relative;	
+	// .no-video,
+	// .touch{
+	// 	.video-container{
+	// 		video{
+	// 			display: none;
+	// 		}
+	// 		.poster{
+	// 			display: block !important;
+	// 		}
+	// 	}
+	// }
+	.video-container{
+		position: relative;
+		bottom: 0%;
+		left: 0%;
 		height: 100%;
-	}
-	.vjs-poster{
-		background-size: cover;
 		width: 100%;
+		overflow: hidden;
+		background: #fff;
+		&:hover .pause-icon{
+			opacity: 1;
+		}
+		.poster{
+			display: none;
+			img{
+				width: 100%;
+				bottom: 0;
+				position: absolute;
+			}
+		}
+		.filter {
+		  z-index: 100;
+		  position: absolute;
+		  background: rgba(0, 0, 0, 0.4);
+		  width: 100%;
+		}
+		video {
+		  position: absolute;
+		  z-index: 0;
+		  bottom: 0;
+		}
+		video.fillWidth {
+		  width: 100%;
+		}
+		.pause-icon{
+			display: none;
+			opacity: 0;
+			transition: opacity 0.5s;
+		}
+		.play-icon,
+		.pause-icon{
+			position: absolute;
+			z-index: 9;
+			background: transparent;
+			border: none;
+			top: 40%;
+			left: 45%;
+			cursor: pointer;
+			img{
+				width: 80px;
+			}
+		}
 	}
-	.vjs-control-bar{
-		background-color: rgba(108, 89, 180, 0.5);
-	}
-	.vjs-button::before,
-	.vjs-volume-high::before,
-	.vjs-play-progress::before,
-	.vjs-remaining-time-display,
-	.vjs-play-progress{
-		color: $purple-dark !important;
-	}
-	.vjs-slider,
-	.vjs-load-progress{
-		background-color: rgba(102, 63, 181, 1);
-		background-color: rgba(102, 63, 181, 0.5);
-	}
-	.vjs-big-play-button{
-		display: none;
-	}
-
 }
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	body{
+		overflow-x: auto; 
+	}
+	.video-section{
+		.video-container{
+			overflow: scroll;
+		}
+	}
+}
+
+

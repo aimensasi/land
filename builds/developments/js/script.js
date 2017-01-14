@@ -59,23 +59,101 @@
 	function htmlVideo(){
 		videojs('video-player', {
 			controlBar: {
-				fullScreenToggle: false
-			}
+				FullscreenToggle: false
+			},
+			"width": "auto",
+			"height": 'auto'
 		}, function(){
 			console.log('We Are Ready To Go');
+			console.log(this);
 		});
 	}
 
+	function scaleVideoContainer() {
+    var height = $(window).height() + 5;
+    var unitHeight = parseInt(height) + 'px';
+    $('.video-section').css('height',unitHeight);
+	}
+
+	function initBannerVideoSize(element){
+    $(element).each(function(){
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+    });
+
+    scaleBannerVideoSize(element);
+	}
+
+	function scaleBannerVideoSize(element){
+
+    var windowWidth = $(window).width(),
+    windowHeight = $(window).height() + 5,
+    videoWidth,
+    videoHeight;
+
+    console.log(windowHeight);
+
+    $(element).each(function(){
+        var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+        $(this).width(windowWidth);
+
+        if(windowWidth < 1000){
+            videoHeight = windowHeight;
+            videoWidth = videoHeight / videoAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+            $(this).width(videoWidth).height(videoHeight);
+        }
+
+        $('.video-section .video-container video').addClass('fadeIn animated');
+
+    });
+	}
+
+	function initiateVideo(){
+		scaleVideoContainer();
+
+		initBannerVideoSize('.video-container .poster img');
+		initBannerVideoSize('.video-container .filter');
+		initBannerVideoSize('.video-container video');
+
+		$(window).on('resize', function() {
+		    scaleVideoContainer();
+		    scaleBannerVideoSize('.video-container .poster img');
+		    scaleBannerVideoSize('.video-container .filter');
+		    scaleBannerVideoSize('.video-container video');
+		});
+	}
+
+	$('#play').on('click tap', function(){
+		var $videoContainer = $(this).parent();
+		var $poster = $videoContainer.children('.poster');
+		var $play = $(this);
+		var $pause = $('#pause');
+		$poster.hide();
+		$play.hide();
+		$pause.show(200);
+
+		$('#video-player').get(0).play();
+
+		$pause.on('click', function(){
+			$('#video-player').get(0).pause();
+			$poster.show();
+			$(this).hide();
+			$play.show(200);
+		});
+	});
 
 	function init(){
 		dropdownAction();
 		collapseController();
 		scrollMagicController();
 		// htmlVideo();
+		initiateVideo();
 	}
 
 	// initiate the functions
 	init();
-
 
 },{}]},{},[1])

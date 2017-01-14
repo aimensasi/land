@@ -7,7 +7,6 @@
     <title>Land.io</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="icon" href="images/favicon-32x32.png">
-    <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -159,10 +158,26 @@
       <!-- Video Section -->
       <!-- ==================================================================== -->
       <section class="row video-section">
-        <video poster="images/Morning-Routine.jpg" class="video video-js vjs-default-skin" id="video-player" data-setup="{}">
+        <!-- <video poster="images/poster_2.jpg" class="video video-js vjs-default-skin" id="video-player" controls>
           <source src="images/oceans.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
           <source src="images/oceans.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
+        </video> -->
+        <div class="video-container">
+          <div class="filter"></div>
+          <video class="fillWidth" id="video-player" loop>
+            <source src="images/Morning-Routine.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="images/Morning-Routine.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+          <button class="play-icon" id="play">
+            <img src="images/play.svg" alt="">
+          </button>
+          <button class="pause-icon" id="pause">
+            <img src="images/pause.svg" alt="">
+          </button>
+          <div class="poster ">
+            <img src="images/Morning-Routine.jpg" alt="">
+          </div>
+        </div>
       </section>
       <!-- End Of Video Section -->
       <!-- ==================================================================== -->
@@ -465,8 +480,6 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js
     "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-    <script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
-
 
   	<script src="js/script.js"></script>
 

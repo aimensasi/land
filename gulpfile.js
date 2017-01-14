@@ -50,7 +50,7 @@ gulp.task('compass', function(){
             sassconfig: outputStyle }))
         .on('error', gUtil.log)
         .pipe(gulp.dest(outputDir + '/css'))
-        .pipe(connect.reload())
+        .pipe(browserSync.reload({stream: true}))
 });
 
 
@@ -60,14 +60,14 @@ gulp.task('js', function(){
         .pipe(browserify())
         .pipe(gulpIf(env === 'production', uglify()))
         .pipe(gulp.dest(outputDir + '/js'))
-        .pipe(connect.reload())
+        .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('html', function(){
    gulp.src(htmlsrc)
         .pipe(gulpIf(env === 'production', minifyHtml()))
         .pipe(gulpIf(env === 'production', gulp.dest(outputDir)))
-        .pipe(connect.reload())
+        .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('images', function(){
@@ -78,22 +78,23 @@ gulp.task('images', function(){
             use: [pngCruch()]
         })))
        .pipe(gulpIf(env === 'production', gulp.dest(outputDir + '/images')))
-       .pipe(connect.reload())
+       .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('connect', function(){
-   connect.server({
-       root: outputDir,
-       livereload: true
-   });
-});
+
+// Start Using browserSync For external device testing
+// gulp.task('connect', function(){
+//    connect.server({
+//        root: outputDir,
+//        livereload: true
+//    });
+// });
 
 gulp.task('watch', function(){
     gulp.watch(jsSrc, ['js']);
     gulp.watch(allSassSrc, ['compass']);
     gulp.watch(htmlsrc, ['html']);
     gulp.watch(imgSrc, ['images']);
-    // browserSync.reload();
 });
 
 gulp.task('browser-sync', function() {
