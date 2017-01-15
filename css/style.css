@@ -744,3 +744,100 @@ section.text .text-row .divider {
   max-width: 5.333333%;
   padding: 0;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  section.text {
+    padding-bottom: 40px;
+  }
+  section.text .title {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 25px;
+  }
+  section.text .text-row {
+    flex-direction: column;
+  }
+  section.text .text-row .text-col .leads {
+    font-size: .8rem;
+  }
+  section.text .text-row .text-col.left {
+    left: 0;
+  }
+  section.text .text-row .text-col.right {
+    right: 0;
+  }
+  section.text .text-row .divider {
+    display: none;
+  }
+}
+section.news {
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+section.news .cover-inverse {
+  background-color: #312f38;
+}
+section.news .cover-inverse .text-block {
+  padding: 70px;
+}
+section.news .cover-inverse .text-block .title.colored,
+section.news .cover-inverse .text-block .title-small {
+  font: 400 1rem "Raleway", sans-serif;
+  color: #fff;
+}
+section.news .cover-inverse .text-block .title.colored {
+  font-size: 0.8rem;
+  background-color: #2b8be3;
+  display: inline;
+  padding: 7px;
+  border-radius: 22px;
+}
+section.news .cover-inverse .text-block .title-small.h {
+  margin-top: 30px;
+  color: #fff;
+}
+section.news .cover-inverse .text-block .title-small {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity .5s;
+  color: rgba(255, 255, 255, 0.5);
+}
+section.news .cover-inverse .text-block .title-small .icon-arrow {
+  margin-left: 5px;
+  transition: margin-left .5s;
+}
+section.news .cover-inverse .text-block .title-small:hover {
+  opacity: .5;
+}
+section.news .cover-inverse .text-block .title-small:hover .icon-arrow {
+  margin-left: 15px;
+}
+section.news .cover-inverse figure.mask {
+  overflow: hidden;
+  cursor: pointer;
+}
+section.news .cover-inverse figure.mask img.img-mask {
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+  transform: scale3d(1.8, 1.8, 1);
+}
+section.news .cover-inverse figure.mask::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+}
+section.news .cover-inverse figure.mask:hover img {
+  transform: scale3d(1, 1, 1);
+}
+section.news .cover-inverse figure.mask:hover::after {
+  opacity: 0;
+}

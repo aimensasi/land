@@ -54,3 +54,37 @@ section.text{
 		}
 	}
 }
+
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	section.text{
+		padding-bottom: 40px;
+		.title{
+			font-size: 1rem;
+			font-weight: 400;
+			margin-top: 25px;
+		}
+		.text-row{
+			flex-direction: column;
+			.text-col{
+				.leads{
+					font-size: .8rem;
+				}
+			}
+			.text-col.left{
+				left: 0;
+			}
+			.text-col.right{
+				right: 0;
+			}
+			.divider{
+				display: none;
+			}
+		}
+	}
+
+}
