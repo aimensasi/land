@@ -51,79 +51,74 @@
 		// // Create the Scene and trigger when visible with ScrollMagic
 		var scene = new ScrollMagic.Scene({
 	  	triggerElement: '#intro-section',
-	  	offset: 20	
+	  	offset: 20,
+	  	reverse:false
 		}).setTween(tween).addTo(controller);
-	}
-
-	function htmlVideo(){
-		videojs('video-player', {
-			controlBar: {
-				FullscreenToggle: false
-			},
-			"width": "auto",
-			"height": 'auto'
-		}, function(){
-			console.log('We Are Ready To Go');
-			console.log(this);
-		});
 	}
 
 	function scaleVideoContainer() {
     var height = $(window).height() + 5;
     var unitHeight = parseInt(height) + 'px';
-    $('.video-section').css('height',unitHeight);
+
+    if (isPhone()) {
+    	$('.video-section').css('height', '200px');	
+    }else{
+    	$('.video-section').css('height', unitHeight);	
+    }
 	}
+
 
 	function initBannerVideoSize(element){
     $(element).each(function(){
-        $(this).data('height', $(this).height());
-        $(this).data('width', $(this).width());
+      $(this).data('height', $(this).height());
+      $(this).data('width', $(this).width());
     });
 
     scaleBannerVideoSize(element);
 	}
 
 	function scaleBannerVideoSize(element){
-
-    var windowWidth = $(window).width(),
-    windowHeight = $(window).height() + 5,
-    videoWidth,
-    videoHeight;
+		var windowWidth = $(window).width();
+		var windowHeight = $('.video-section').height() + 5;
+		var videoWidth;
+		var videoHeight;
 
     console.log(windowHeight);
 
-    $(element).each(function(){
+    $(element).each(function(){ 		
         var videoAspectRatio = $(this).data('height')/$(this).data('width');
 
         $(this).width(windowWidth);
-
         if(windowWidth < 1000){
             videoHeight = windowHeight;
             videoWidth = videoHeight / videoAspectRatio;
+
             $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
 
             $(this).width(videoWidth).height(videoHeight);
         }
 
-        $('.video-section .video-container video').addClass('fadeIn animated');
+        // $('.video-section .video-container video').addClass('fadeIn animated');
 
     });
 	}
 
+
 	function initiateVideo(){
 		scaleVideoContainer();
 
-		initBannerVideoSize('.video-container .poster img');
-		initBannerVideoSize('.video-container .filter');
+		// initBannerVideoSize('.video-container .poster img');
+		// initBannerVideoSize('.video-container .filter');
 		initBannerVideoSize('.video-container video');
 
 		$(window).on('resize', function() {
 		    scaleVideoContainer();
-		    scaleBannerVideoSize('.video-container .poster img');
-		    scaleBannerVideoSize('.video-container .filter');
+		    // scaleBannerVideoSize('.video-container .poster img');
+		    // scaleBannerVideoSize('.video-container .filter');
 		    scaleBannerVideoSize('.video-container video');
 		});
 	}
+
 
 	$('#play').on('click tap', function(){
 		var $videoContainer = $(this).parent();
@@ -133,6 +128,7 @@
 		$poster.hide();
 		$play.hide();
 		$pause.show(200);
+		console.log('PLay');
 
 		$('#video-player').get(0).play();
 
@@ -144,12 +140,65 @@
 		});
 	});
 
+	function videoController(){
+		if (isPhone()) {
+			$('.vjs-controlls').hide();
+		}
+	}
+
+	function magicScrollAnimation($container, $leftElement, $rightElement, options){
+		if (!isPhone()) {
+			// console.log($container + ' ' + $leftElement + ' ' + );
+			var controller = new ScrollMagic.Controller();
+			var timeLine = new TimelineLite();
+
+			var tween1 = TweenMax.to($leftElement, .8, options);
+			var tween2 = TweenMax.to($rightElement, .8, options);
+			
+			timeLine.add(tween1).add(tween2, 0);
+
+			var scene = new ScrollMagic.Scene({
+		  	triggerElement: $container,
+		  	offset: 20,
+		  	reverse:false
+			}).setTween(timeLine).addTo(controller);
+		}
+	}
+
+	function pricingAnimation(){
+		magicScrollAnimation('.pricing', '#pricing-left', '#pricing-right', {right: '0', left: '0'});
+	}
+
+	function carouselIndicator(){
+		$('li[data-target="#people-slides"]').on('click', function(){
+			$('li.active[data-target="#people-slides"]').removeClass('active');
+			$(this).addClass('active');
+		});
+	}
+
+	function textAnimation(){
+		magicScrollAnimation('.text', '.text-col.left', '.text-col.right', {right: '0', left: '0'});
+	}
+
+	function isPhone(){
+		var IOS = /iPad|iPhone|iPod/;
+		var ANDROID = /android/i;
+		if (IOS.test(navigator.platform) || ANDROID.test(navigator.platform)) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	function init(){
 		dropdownAction();
 		collapseController();
 		scrollMagicController();
-		// htmlVideo();
+		videoController();
 		initiateVideo();
+		pricingAnimation();
+		carouselIndicator();
+		textAnimation();
 	}
 
 	// initiate the functions

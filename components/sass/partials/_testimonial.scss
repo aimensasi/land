@@ -1,0 +1,114 @@
+// @import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,600i,700,700i');
+// @import url('https://fonts.googleapis.com/css?family=Lato');
+// @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500,700');
+
+// $font-primary: #424753;
+// $font-secondary: #fff;
+// $purple: #6c59b4;
+// $purple-dark: #663fb5;
+// $light-gray: #eceff3;
+// $bg-inverse: #312f38;
+// $bg-light: #f4f5f7;
+// $gray-light-faded: rgba(255, 255, 255, .5);
+// $gray-faded: rgba(66, 71, 83, .5);
+// $highlight: #aeb0b5;
+// $highlight-light: #ededef;
+
+// // font: font-style font-variant font-weight font-size/line-height font-family;
+// $font-thin: 100 1rem 'Raleway', sans-serif;
+// $font-extraLight: 200 1rem 'Raleway', sans-serif;
+// $font-light: 300 1rem 'Raleway', sans-serif;
+// $font-regular: 400 1rem 'Raleway', sans-serif;
+// $font-medium: 500 1rem 'Raleway', sans-serif;
+// $font-semiBold: 600 1rem 'Raleway', sans-serif;
+// $font-bold: 700 1rem 'Raleway', sans-serif;
+
+// $font-italic-semibold: italic 600 1rem 'Raleway', sans-serif;
+// $font-italic-bold: italic 700 1rem 'Raleway', sans-serif;
+
+
+
+.testimonials{
+	@include imageCover('../images/se-img.png');
+	padding-top: 40px;
+	padding-bottom: 30px;
+	height: 500px;
+	.carousel{
+		height: 100%;
+		.blockquote{
+			@include center-content();
+			width: 85%;
+			border-left: none;
+			text-align: center;
+			margin-top: 50px;
+			.avatar{
+				width: 110px;
+				border: 5px solid $light-gray;
+			}
+			.quote, .username{
+				color: $font-secondary;
+			}
+			.quote{
+    		margin-top: 50px;
+			}
+			.username{
+				margin-top: 10px;
+				margin-bottom: 30px;
+			}
+		}
+		.indicators{
+			list-style: none;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			padding: 0;
+			cursor: pointer;
+			li{
+				margin-right: 20px;
+			}
+			li:not(.active){
+				opacity: 0.3;
+			}
+			.avatar-small{
+				width: 45px;
+				border: 2px solid $light-gray;
+			}
+		}
+	}
+}
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	.testimonials{
+		padding-top: 10px;
+		padding-bottom: 50px;		
+		.container{
+			padding-left: 0;
+			padding-right: 0;
+			.carousel{
+
+				.blockquote{
+					height: 290px;
+					width: 100%;
+					.quote{
+						font-size: 0.9rem;
+					}
+					.username{
+						font-size: 1rem;
+						font-weight: 500
+					}
+				}
+				.indicators{
+					margin-top: 28px;
+					li{
+						margin-right: 10px;
+						margin-left: auto;
+					}
+				}
+			}
+		}
+	}	
+}

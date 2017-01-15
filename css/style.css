@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,600i,700,700i");
 @import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:500,700");
 @keyframes fadeIn {
   0% {
     top: 420px;
@@ -446,6 +447,7 @@ header.header .social-row .social.last {
   border-right: none;
   border-left: none;
   position: relative;
+  max-height: 595px;
 }
 .video-section .video-container {
   position: relative;
@@ -458,14 +460,6 @@ header.header .social-row .social.last {
 }
 .video-section .video-container:hover .pause-icon {
   opacity: 1;
-}
-.video-section .video-container .poster {
-  display: none;
-}
-.video-section .video-container .poster img {
-  width: 100%;
-  bottom: 0;
-  position: absolute;
 }
 .video-section .video-container .filter {
   z-index: 100;
@@ -501,12 +495,252 @@ header.header .social-row .social.last {
   width: 80px;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  body {
-    overflow-x: auto;
-  }
+.pricing {
+  background-color: #f4f5f7;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+.pricing .title.top {
+  text-align: center;
+  font: 200 1rem "Raleway", sans-serif;
+  font-size: 2rem;
+  margin-top: 25px;
+  margin-bottom: 70px;
+}
+.pricing .price-box {
+  background-color: #fff;
+  padding: 0;
+  border: 1px solid #eceff3;
+  border-radius: 5px;
+}
+.pricing .price-box .block-header {
+  background-color: #eceff3;
+  padding: 20px 0px 8px;
+}
+.pricing .price-box .block-header .title {
+  font: 500 1rem "Raleway", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pricing .price-box .block-body {
+  text-align: center;
+}
+.pricing .price-box .block-body .title-small {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: 30px;
+  font: 300 1rem "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+.pricing .price-box .block-body .price-tag {
+  font-family: 'Lato', sans-serif;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.pricing .price-box .block-body .price-tag .curreny {
+  top: -1.4em;
+  font-size: 1.6rem;
+}
+.pricing .price-box .block-body .price-tag .price {
+  font-size: 3.5rem;
+}
+.pricing .price-box .block-body .price-tag .price-term {
+  color: #aeb0b5;
+  margin-left: -5px;
+  font-variant: small-caps;
+  font-size: 1rem;
+}
+.pricing .price-box .block-body .features-list .feature-title {
+  font: 400 1rem "Raleway", sans-serif;
+  font-size: 0.9rem;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ededef;
+}
+.pricing .price-box .block-body .features-list .feature-title:last-child {
+  border: none;
+}
+.pricing .price-box .block-body .btn-get-started {
+  padding: 1.2rem 3.125rem 1.1rem;
+  border-radius: 45px;
+  background-color: transparent;
+  border: 1px solid #663fb5;
+  color: #663fb5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.pricing .price-box .block-body .btn-get-started:hover {
+  color: rgba(102, 63, 181, 0.5);
+}
 
-  .video-section .video-container {
-    overflow: scroll;
+.pricing .middel-box {
+  order: 2;
+  z-index: 3;
+  height: 630px;
+  border: 2px solid #6c59b4;
+}
+.pricing .middel-box .block-header {
+  background-color: rgba(102, 63, 181, 0.5);
+  color: #6c59b4;
+}
+.pricing .middel-box .block-body .btn-get-started-focus {
+  background-color: rgba(102, 63, 181, 0.5);
+  border: none;
+  margin-top: 40px;
+}
+.pricing .price-box.right {
+  order: 3;
+  right: 370px;
+}
+.pricing .price-box.left {
+  order: 1;
+  left: 370px;
+}
+.pricing .hidden-box {
+  height: 590px;
+  position: relative;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  .pricing .title.top {
+    font-size: 1.4rem;
+    font-weight: 400;
   }
+  .pricing .flex-col-small {
+    flex-direction: column;
+  }
+  .pricing .flex-col-small .price-box.left {
+    left: 0;
+  }
+  .pricing .flex-col-small .price-box.right {
+    right: 0;
+  }
+  .pricing .flex-col-small .price-box {
+    margin-bottom: 20px;
+    border: 1px solid #eceff3;
+  }
+  .pricing .flex-col-small .price-box .block-header {
+    background-color: #eceff3;
+    color: #424753;
+  }
+  .pricing .flex-col-small .price-box .block-body .btn-get-started {
+    border: 1px solid #663fb5;
+    background-color: transparent;
+  }
+}
+.testimonials {
+  background: url("../images/se-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  height: 500px;
+}
+.testimonials .carousel {
+  height: 100%;
+}
+.testimonials .carousel .blockquote {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  border-left: none;
+  text-align: center;
+  margin-top: 50px;
+}
+.testimonials .carousel .blockquote .avatar {
+  width: 110px;
+  border: 5px solid #eceff3;
+}
+.testimonials .carousel .blockquote .quote, .testimonials .carousel .blockquote .username {
+  color: #fff;
+}
+.testimonials .carousel .blockquote .quote {
+  margin-top: 50px;
+}
+.testimonials .carousel .blockquote .username {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.testimonials .carousel .indicators {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding: 0;
+  cursor: pointer;
+}
+.testimonials .carousel .indicators li {
+  margin-right: 20px;
+}
+.testimonials .carousel .indicators li:not(.active) {
+  opacity: 0.3;
+}
+.testimonials .carousel .indicators .avatar-small {
+  width: 45px;
+  border: 2px solid #eceff3;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  .testimonials {
+    padding-top: 10px;
+    padding-bottom: 50px;
+  }
+  .testimonials .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .testimonials .container .carousel .blockquote {
+    height: 290px;
+    width: 100%;
+  }
+  .testimonials .container .carousel .blockquote .quote {
+    font-size: 0.9rem;
+  }
+  .testimonials .container .carousel .blockquote .username {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .testimonials .container .carousel .indicators {
+    margin-top: 28px;
+  }
+  .testimonials .container .carousel .indicators li {
+    margin-right: 10px;
+    margin-left: auto;
+  }
+}
+section.text {
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+section.text .title {
+  text-align: center;
+  font: 300 1rem "Raleway", sans-serif;
+  font-size: 1.8rem;
+  margin-top: 25px;
+}
+section.text .text-row {
+  margin-top: 60px;
+}
+section.text .text-row .text-col .leads {
+  font: 300 1rem "Raleway", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+section.text .text-row .text-col.left {
+  left: -900px;
+}
+section.text .text-row .text-col.right {
+  right: -900px;
+}
+section.text .text-row .divider {
+  border-right: 1px solid #eceff3;
+  max-width: 5.333333%;
+  padding: 0;
 }

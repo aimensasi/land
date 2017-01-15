@@ -1,0 +1,209 @@
+// @import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,600i,700,700i');
+// @import url('https://fonts.googleapis.com/css?family=Lato');
+
+// $font-primary: #424753;
+// $font-secondary: #fff;
+// $purple: #6c59b4;
+// $purple-dark: #663fb5;
+// $light-gray: #eceff3;
+// $bg-inverse: #312f38;
+// $bg-light: #f4f5f7;
+// $gray-light-faded: rgba(255, 255, 255, .5);
+// $gray-faded: rgba(66, 71, 83, .5);
+
+// // font: font-style font-variant font-weight font-size/line-height font-family;
+// $font-thin: 100 1rem 'Raleway', sans-serif;
+// $font-extraLight: 200 1rem 'Raleway', sans-serif;
+// $font-light: 300 1rem 'Raleway', sans-serif;
+// $font-regular: 400 1rem 'Raleway', sans-serif;
+// $font-medium: 500 1rem 'Raleway', sans-serif;
+// $font-semiBold: 600 1rem 'Raleway', sans-serif;
+// $font-bold: 700 1rem 'Raleway', sans-serif;
+
+// $font-italic-semibold: italic 600 1rem 'Raleway', sans-serif;
+// $font-italic-bold: italic 700 1rem 'Raleway', sans-serif;
+
+
+.pricing{
+	background-color: $bg-light;
+	padding-top: 40px;
+	padding-bottom: 80px;
+	.title.top{
+		text-align: center;
+		font: $font-extraLight;
+		font-size: 2rem;
+		margin-top: 25px;
+		margin-bottom: 70px;
+	}
+	.price-box{
+		background-color: $font-secondary;
+		padding: 0;
+		border: 1px solid $light-gray;
+		border-radius: 5px;
+		.block-header{
+			background-color: $light-gray;
+			padding: 20px 0px 8px;
+			.title{
+				font: $font-medium;
+				text-align: center;
+				text-transform: uppercase;
+			}
+		}
+		.block-body{
+			text-align: center;
+			.title-small{
+				@include center-content();
+				width: 90%;
+				margin-top: 30px;
+				font: $font-light;
+				font-size: 1rem;
+				line-height: 1.9;
+			}
+			.price-tag{
+				font-family: 'Lato', sans-serif;
+				margin-top: 30px;
+				margin-bottom: 20px;
+				.curreny{
+					top: -1.4em;
+					font-size: 1.6rem;
+				}
+				.price{
+					font-size: 3.5rem;
+				}
+				.price-term{
+					color: $highlight;
+					margin-left: -5px;
+					font-variant: small-caps;
+					font-size: 1rem;
+				}
+			}
+			.features-list{
+				.feature-title{
+					font: $font-regular;
+					font-size: 0.9rem;
+					padding-top: 10px;
+					padding-bottom: 15px;
+					border-bottom: 1px solid $highlight-light;
+				}
+				.feature-title:last-child{
+					border: none;
+				}
+			}
+			.btn-get-started{
+				padding: 1.2rem 3.125rem 1.1rem;
+				border-radius: 45px;
+				background-color: transparent;
+				border: 1px solid $purple-dark;
+				color: $purple-dark;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				cursor: pointer;
+				&:hover{
+					color: rgba(102, 63, 181, 0.5);
+				}
+			}
+		}
+	}
+}
+
+.pricing{
+	.middel-box{
+		order: 2;	
+		z-index: 3;
+		height: 630px;
+		border: 2px solid $purple;
+		.block-header{
+			background-color: rgba(102, 63, 181, 0.5);
+			color: $purple;
+		}
+		.block-body{
+			.btn-get-started-focus{
+				background-color: rgba(102, 63, 181, 0.5);
+				border: none;
+				margin-top: 40px;
+			}
+		}
+	}
+	.price-box.right{
+		order: 3;	
+		right: 370px;
+	}
+	.price-box.left{
+		order: 1;		
+		left: 370px;
+	}
+	.hidden-box{
+		height: 590px;
+		position: relative;
+	}
+}
+
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	.pricing{
+		.title.top{
+			font-size: 1.4rem;
+			font-weight: 400;
+		}
+		.flex-col-small{
+			flex-direction: column;
+			.price-box.left{
+				left: 0;
+			}
+			.price-box.right{
+				right: 0;	
+			}
+			.price-box{
+				margin-bottom: 20px;
+				border: 1px solid $light-gray;
+				.block-header{
+					background-color: $light-gray;			
+					color: $font-primary;
+				}
+				.block-body{
+					.btn-get-started{
+						border: 1px solid $purple-dark;
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+// @include center-content();
+// width: 70%;
+// font-family: 'Lato', sans-serif;
+// font-size: 5rem;
+// font-weight: 700;
+// position: relative;
+// margin-bottom: 20px;
+// margin-top: 20px;
+// &::after{
+// 	content: '/MONTH';
+// 	position: absolute;
+// 	bottom: 12px;
+// 	right: 10px;
+// 	font-size: 1rem;
+// 	color: $highlight;
+// }
+// &::before{
+// 	content: '$';
+// 	position: absolute;
+// 	top: 10px;
+// 	left: 59px;
+// 	font-size: 2.2rem;
+// }

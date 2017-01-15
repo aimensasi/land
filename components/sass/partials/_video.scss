@@ -2,17 +2,7 @@
 	border-right: none;
 	border-left: none;
 	position: relative;	
-	// .no-video,
-	// .touch{
-	// 	.video-container{
-	// 		video{
-	// 			display: none;
-	// 		}
-	// 		.poster{
-	// 			display: block !important;
-	// 		}
-	// 	}
-	// }
+	max-height: 595px;
 	.video-container{
 		position: relative;
 		bottom: 0%;
@@ -23,14 +13,6 @@
 		background: #fff;
 		&:hover .pause-icon{
 			opacity: 1;
-		}
-		.poster{
-			display: none;
-			img{
-				width: 100%;
-				bottom: 0;
-				position: absolute;
-			}
 		}
 		.filter {
 		  z-index: 100;
@@ -72,14 +54,5 @@
 and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : portrait) {
-	body{
-		overflow-x: auto; 
-	}
-	.video-section{
-		.video-container{
-			overflow: scroll;
-		}
-	}
+	
 }
-
-

@@ -22,3 +22,9 @@
 	0% {top: 420px;}
 	100% {top: 20px;}	
 }
+
+@mixin center-content() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

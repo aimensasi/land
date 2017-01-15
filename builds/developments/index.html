@@ -158,25 +158,17 @@
       <!-- Video Section -->
       <!-- ==================================================================== -->
       <section class="row video-section">
-        <!-- <video poster="images/poster_2.jpg" class="video video-js vjs-default-skin" id="video-player" controls>
-          <source src="images/oceans.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-          <source src="images/oceans.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video> -->
         <div class="video-container">
-          <div class="filter"></div>
-          <video class="fillWidth" id="video-player" loop>
+          <video class="video fillWidth" id="video-player" poster="images/Morning-Routine.jpg" loop="loop">
             <source src="images/Morning-Routine.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
             <source src="images/Morning-Routine.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
           </video>
-          <button class="play-icon" id="play">
+          <button class="play-icon vjs-controlls" id="play">
             <img src="images/play.svg" alt="">
           </button>
-          <button class="pause-icon" id="pause">
+          <button class="pause-icon vjs-controlls" id="pause">
             <img src="images/pause.svg" alt="">
           </button>
-          <div class="poster ">
-            <img src="images/Morning-Routine.jpg" alt="">
-          </div>
         </div>
       </section>
       <!-- End Of Video Section -->
@@ -187,65 +179,79 @@
         
       <section class="row pricing">
         <div class="container">
-          <h2 class="title">Manage your subscriptions</h2>
-          <div class="col-md-4 price-box flex flex-col">
-            <div class="header">
-              <h2 class="title">Professional</h2>
-            </div>
-            <div class="body">
-              <h2 class="title-small">
-                Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras.
-              </h2>
-              <div class="price-tag">49</div>
-              <div class="features-list flex flex-col">
-                <h2 class="title-small">Sed risus feugiat</h2>
-                <h2 class="title-small">Sed risus feugiat fusce eu sit</h2>
-                <h2 class="title-small">Sed risus feugiat fusce</h2>
-                <h2 class="title-small">Sed risus feugiat</h2>
+          <h2 class="title top">Manage your subscriptions</h2>
+          <div class="row flex flex-col-small">
+            <div class="col-md-4 price-box flex flex-col middel-box">
+              <div class="block-header">
+                <h2 class="title">Professional</h2>
               </div>
-              <button class="btn btn-get-started btn-get-started-focus link-to">
-                GET STARTED
-              </button>
-            </div>
-          </div>
-          <div class="col-md-4 price-box flex flex-col hidden-box right">
-            <div class="header">
-              <h2 class="title">Professional</h2>
-            </div>
-            <div class="body">
-              <h2 class="title-small">
-                Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras.
-              </h2>
-              <div class="price-tag">49</div>
-              <div class="features-list flex flex-col">
-                <h2 class="title-small">Sed risus feugiat</h2>
-                <h2 class="title-small">Sed risus feugiat fusce eu sit</h2>
-                <h2 class="title-small">Sed risus feugiat fusce</h2>
-                <h2 class="title-small">Sed risus feugiat</h2>
+              <div class="block-body">
+                <h2 class="title-small">
+                  Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras.
+                </h2>
+                <h4 class="price-tag">
+                  <sup class="curreny">$</sup>
+                  <span class="price">19</span>
+                  <small class="price-term">/month</small>
+                </h4>
+                <div class="features-list flex flex-col">
+                  <h2 class="feature-title">Sed risus feugiat</h2>
+                  <h2 class="feature-title">Sed risus feugiat fusce eu sit</h2>
+                  <h2 class="feature-title">Sed risus feugiat fusce</h2>
+                  <h2 class="feature-title">Sed risus feugiat</h2>
+                </div>
+                <button class="btn btn-get-started btn-get-started-focus link-to">
+                  GET STARTED
+                </button>
               </div>
-              <button class="btn btn-get-started btn-get-started-focus link-to">
-                GET STARTED
-              </button>
             </div>
-          </div>
-          <div class="col-md-4 price-box flex flex-col hidden-box left">
-            <div class="header">
-              <h2 class="title">Professional</h2>
-            </div>
-            <div class="body">
-              <h2 class="title-small">
-                Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras.
-              </h2>
-              <div class="price-tag">49</div>
-              <div class="features-list flex flex-col">
-                <h2 class="title-small">Sed risus feugiat</h2>
-                <h2 class="title-small">Sed risus feugiat fusce eu sit</h2>
-                <h2 class="title-small">Sed risus feugiat fusce</h2>
-                <h2 class="title-small">Sed risus feugiat</h2>
+            <div class="col-md-4 price-box flex flex-col hidden-box right" id="pricing-right">
+              <div class="block-header">
+                <h2 class="title">Enterprise</h2>
               </div>
-              <button class="btn btn-get-started btn-get-started-focus link-to">
-                GET STARTED
-              </button>
+              <div class="block-body">
+                <h2 class="title-small">
+                  Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras.
+                </h2>
+                <h4 class="price-tag">
+                  <sup class="curreny">$</sup>
+                  <span class="price">48</span>
+                  <small class="price-term">/month</small>
+                </h4>
+                <div class="features-list flex flex-col">
+                  <h2 class="feature-title">Sed risus feugiat</h2>
+                  <h2 class="feature-title">Sed risus feugiat fusce eu sit</h2>
+                  <h2 class="feature-title">Sed risus feugiat fusce</h2>
+                  <h2 class="feature-title">Sed risus feugiat</h2>
+                </div>
+                <button class="btn btn-get-started link-to">
+                  GET STARTED
+                </button>
+              </div>
+            </div>
+            <div class="col-md-4 price-box flex flex-col hidden-box left" id="pricing-left">
+              <div class="block-header">
+                <h2 class="title">Personal</h2>
+              </div>
+              <div class="block-body">
+                <h2 class="title-small">
+                  Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras.
+                </h2>
+                <h4 class="price-tag">
+                  <sup class="curreny">$</sup>
+                  <span class="price">180</span>
+                  <small class="price-term">/month</small>
+                </h4>
+                <div class="features-list flex flex-col">
+                  <h2 class="feature-title">Sed risus feugiat</h2>
+                  <h2 class="feature-title">Sed risus feugiat fusce eu sit</h2>
+                  <h2 class="feature-title">Sed risus feugiat fusce</h2>
+                  <h2 class="feature-title">Sed risus feugiat</h2>
+                </div>
+                <button class="btn btn-get-started link-to">
+                  GET STARTED
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -259,11 +265,11 @@
 
       <section class="row testimonials">
         <div class="container">
-          <div id="people-slides" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div id="people-slides" class="carousel slide flex flex-col" data-ride="carousel" data-interval="false">
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
                 <blockquote class="blockquote">
-                  <img src="images/face1.jpg" alt="avatar" class="img-circle avatar">
+                  <img src="images/face1.jpg" alt="avatar" class="rounded-circle avatar">
                   <p class="quote">
                     Good design at the front-end suggests that everything is in order at the back-end, whether or not that is the case.
                   </p>
@@ -274,7 +280,7 @@
               </div>
               <div class="carousel-item">
                 <blockquote class="blockquote">
-                  <img src="images/face2.jpg" alt="avatar" class="img-circle avatar">
+                  <img src="images/face2.jpg" alt="avatar" class="rounded-circle avatar">
                   <p class="quote">
                     It’s not about knowing all the gimmicks and photo tricks. If you haven’t got the eye, no program will give it to you.
                   </p>
@@ -285,7 +291,7 @@
               </div>
               <div class="carousel-item">
                 <blockquote class="blockquote">
-                  <img src="images/face3.jpg" alt="avatar" class="img-circle avatar">
+                  <img src="images/face3.jpg" alt="avatar" class="rounded-circle avatar">
                   <p class="quote">
                     There’s a point when you’re done simplifying. Otherwise, things get really complicated.
                   </p>
@@ -296,7 +302,7 @@
               </div>
               <div class="carousel-item">
                 <blockquote class="blockquote">
-                  <img src="images/face4.jpg" alt="avatar" class="img-circle avatar">
+                  <img src="images/face4.jpg" alt="avatar" class="rounded-circle avatar">
                   <p class="quote">
                     Designing for clients that don’t appreciate the value of design is like buying new tires for a rental car.
                   </p>
@@ -307,7 +313,7 @@
               </div>
               <div class="carousel-item">
                 <blockquote class="blockquote">
-                  <img src="images/face5.jpg" alt="avatar" class="img-circle avatar">
+                  <img src="images/face5.jpg" alt="avatar" class="rounded-circle avatar">
                   <p class="quote">
                     Every picture owes more to other pictures painted before than it owes to nature.
                   </p>
@@ -317,12 +323,22 @@
                 </blockquote>
               </div>
             </div>
-            <ol class="carousel-indicators">
-                <li data-target="#people-slides" data-slide-to="0" class="active"></li>
-                <li data-target="#people-slides" data-slide-to="1"></li>
-                <li data-target="#people-slides" data-slide-to="2"></li>
-                <li data-target="#people-slides" data-slide-to="3"></li>
-                <li data-target="#people-slides" data-slide-to="4"></li>
+            <ol class="indicators flex">
+                <li data-target="#people-slides" data-slide-to="0" class="active">
+                  <img src="images/face1.jpg" alt="avatar" class="rounded-circle avatar-small">
+                </li>
+                <li data-target="#people-slides" data-slide-to="1">
+                  <img src="images/face2.jpg" alt="avatar" class="rounded-circle avatar-small">
+                </li>
+                <li data-target="#people-slides" data-slide-to="2">
+                  <img src="images/face3.jpg" alt="avatar" class="rounded-circle avatar-small">
+                </li>
+                <li data-target="#people-slides" data-slide-to="3">
+                  <img src="images/face4.jpg" alt="avatar" class="rounded-circle avatar-small">
+                </li>
+                <li data-target="#people-slides" data-slide-to="4">
+                  <img src="images/face5.jpg" alt="avatar" class="rounded-circle avatar-small">
+                </li>
               </ol>
           </div>
         </div>
@@ -335,15 +351,18 @@
       <section class="row text">
         <div class="container">
           <h2 class="title">Make your mark on the product industry</h2>
-          <div class="col-md-5">
-            <p class="leads">
-              A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.
-            </p>
-          </div>
-          <div class="col-md-5 offset-md-2 divider">
-            <p class="leads">
-              A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.
-            </p>
+          <div class="flex text-row">
+            <div class="col-md-5 text-col left">
+              <p class="leads">
+                A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.
+              </p>
+            </div>
+            <div class="divider col-md-2"></div>
+            <div class="col-md-5 offset-md-1 text-col right">
+              <p class="leads">
+                A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.
+              </p>
+            </div>            
           </div>
         </div>
       </section>
