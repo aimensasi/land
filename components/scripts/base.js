@@ -146,27 +146,27 @@
 		}
 	}
 
-	function magicScrollAnimation($container, $leftElement, $rightElement, options){
+	function pricingAnimation(){
 		if (!isPhone()) {
 			// console.log($container + ' ' + $leftElement + ' ' + );
 			var controller = new ScrollMagic.Controller();
 			var timeLine = new TimelineLite();
 
-			var tween1 = TweenMax.to($leftElement, .8, options);
-			var tween2 = TweenMax.to($rightElement, .8, options);
+			var tween1 = TweenMax.to('#pricing-right', .8, {
+				right: 0
+			});
+			var tween2 = TweenMax.to('#pricing-left', .8, {
+				left: 0
+			});
 			
 			timeLine.add(tween1).add(tween2, 0);
 
 			var scene = new ScrollMagic.Scene({
-		  	triggerElement: $container,
+		  	triggerElement: '.pricing',
 		  	offset: 20,
 		  	reverse:false
 			}).setTween(timeLine).addTo(controller);
 		}
-	}
-
-	function pricingAnimation(){
-		magicScrollAnimation('.pricing', '#pricing-left', '#pricing-right', {right: '0', left: '0'});
 	}
 
 	function carouselIndicator(){
@@ -177,7 +177,63 @@
 	}
 
 	function textAnimation(){
-		magicScrollAnimation('.text', '.text-col.left', '.text-col.right', {right: '0', left: '0'});
+		if (!isPhone()) {
+			// console.log($container + ' ' + $leftElement + ' ' + );
+			var controller = new ScrollMagic.Controller();
+			var timeLine = new TimelineLite();
+
+			var tween1 = TweenMax.to('.text-col.right', .8, {
+				right: 0
+			});
+			var tween2 = TweenMax.to('.text-col.left', .8, {
+				left: 0
+			});
+			
+			timeLine.add(tween1).add(tween2, 0);
+
+			var scene = new ScrollMagic.Scene({
+		  	triggerElement: '.text',
+		  	offset: 20,
+		  	reverse:false
+			}).setTween(timeLine).addTo(controller);
+		}
+	}
+
+	function animateScrollTop(){
+		var controller = new ScrollMagic.Controller();
+		// build tween
+		var tween = TweenMax.from("#top", 0.5, {autoAlpha: 0, scale: 0.7});
+
+		// build scene
+		var scene = new ScrollMagic.Scene({triggerElement: "#back-top", duration: 200, triggerHook: "onLeave"})
+						.setTween(tween)
+						// .addIndicators() // add indicators (requires plugin)
+						.addTo(controller);
+
+		// change behaviour of controller to animate scroll instead of jump
+		controller.scrollTo(function (newpos) {
+			TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+		});
+
+		$('#back-top').on('click', function(e){
+			e.preventDefault();
+			controller.scrollTo('#top');
+		});
+		//  bind scroll to anchor links
+		// $(document).on("click", "a[href^='#']", function (e) {
+		// 	var id = $(this).attr("href");
+		// 	if ($(id).length > 0) {
+		// 		e.preventDefault();
+
+		// 		// trigger scroll
+		// 		controller.scrollTo(id);
+
+		// 			// if supported by the browser we can even update the URL.
+		// 		if (window.history && window.history.pushState) {
+		// 			history.pushState("", document.title, id);
+		// 		}
+		// 	}
+		// });
 	}
 
 	function isPhone(){
@@ -199,6 +255,7 @@
 		pricingAnimation();
 		carouselIndicator();
 		textAnimation();
+		// animateScrollTop();
 	}
 
 	// initiate the functions

@@ -1,0 +1,118 @@
+// @import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,600i,700,700i');
+// @import url('https://fonts.googleapis.com/css?family=Lato');
+// @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500,700');
+
+// $font-primary: #424753;
+// $font-secondary: #fff;
+// $purple: #6c59b4;
+// $purple-dark: #663fb5;
+// $light-gray: #eceff3;
+// $bg-inverse: #312f38;
+// $bg-light: #f4f5f7;
+// $gray-light-faded: rgba(255, 255, 255, .5);
+// $gray-faded: rgba(66, 71, 83, .5);
+// $highlight: #aeb0b5;
+// $highlight-light: #ededef;
+
+// // font: font-style font-variant font-weight font-size/line-height font-family;
+// $font-thin: 100 1rem 'Raleway', sans-serif;
+// $font-extraLight: 200 1rem 'Raleway', sans-serif;
+// $font-light: 300 1rem 'Raleway', sans-serif;
+// $font-regular: 400 1rem 'Raleway', sans-serif;
+// $font-medium: 500 1rem 'Raleway', sans-serif;
+// $font-semiBold: 600 1rem 'Raleway', sans-serif;
+// $font-bold: 700 1rem 'Raleway', sans-serif;
+
+// $font-italic-semibold: italic 600 1rem 'Raleway', sans-serif;
+// $font-italic-bold: italic 700 1rem 'Raleway', sans-serif;
+
+footer.footer{
+	background-color: $bg-inverse;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	.copy-rights{
+		.logo-img{
+			margin-top: 10px;
+		}
+		.leads{
+			color: $font-secondary;
+			font: $font-light;
+			font-size: .9rem;
+			margin-left: -20px;
+			line-height: 1.5;
+		}
+	}
+	.navbar-nav{
+		.nav-link{
+			color: $font-secondary;
+			font: $font-medium;
+			margin-right: 20px;
+		}
+
+		.back-top{
+			position: relative;
+			&::after{
+				content: '^';
+				position: absolute;
+				top: 6px;
+		    right: -25px;
+		    font-size: 26px;
+		    font-weight: 200;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	footer.footer{
+		.flex-col-small{
+			flex-direction: column;
+			.copy-rights{
+				flex-wrap: nowrap;
+				.col-md-3{
+					width: 40%;
+					padding: 0;
+				}
+				.col-md-9{
+					padding-right: 0;
+					width: 100%;
+				}
+				.logo-img{
+					margin-top: 10px;
+				}
+				.leads{
+					font-size: .7rem;
+				}
+			}
+			.navbar-nav{
+				flex-direction: column;
+				.nav-link{
+					text-align: center;
+					@include center-content();
+					font: $font-medium;
+					font-size: .9rem;
+					// margin-right: 5px;
+				}
+
+				.back-top{
+					position: relative;
+					&::after{
+						top: 9px;
+						right: 50px;
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+}

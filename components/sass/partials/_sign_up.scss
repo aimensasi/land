@@ -1,0 +1,153 @@
+// @import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,600i,700,700i');
+// @import url('https://fonts.googleapis.com/css?family=Lato');
+// @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500,700');
+
+// $font-primary: #424753;
+// $font-secondary: #fff;
+// $purple: #6c59b4;
+// $purple-dark: #663fb5;
+// $light-gray: #eceff3;
+// $bg-inverse: #312f38;
+// $bg-light: #f4f5f7;
+// $gray-light-faded: rgba(255, 255, 255, .5);
+// $gray-faded: rgba(66, 71, 83, .5);
+// $highlight: #aeb0b5;
+// $highlight-light: #ededef;
+
+// // font: font-style font-variant font-weight font-size/line-height font-family;
+// $font-thin: 100 1rem 'Raleway', sans-serif;
+// $font-extraLight: 200 1rem 'Raleway', sans-serif;
+// $font-light: 300 1rem 'Raleway', sans-serif;
+// $font-regular: 400 1rem 'Raleway', sans-serif;
+// $font-medium: 500 1rem 'Raleway', sans-serif;
+// $font-semiBold: 600 1rem 'Raleway', sans-serif;
+// $font-bold: 700 1rem 'Raleway', sans-serif;
+
+// $font-italic-semibold: italic 600 1rem 'Raleway', sans-serif;
+// $font-italic-bold: italic 700 1rem 'Raleway', sans-serif;
+
+section.sign-up{
+	padding-top: 50px;
+	padding-bottom: 80px;
+	background-color: $bg-light;
+	.title{
+		text-align: center;
+		font: $font-light;
+		font-size: 1.8rem;
+		margin-bottom: 50px;
+	}
+	.signup-form{
+		.form-group{
+			background-color: $font-secondary;
+			height: 50px;
+	    width: 260px;
+	    padding-left: 20px;
+	    margin-right: 26px;
+	    border-radius: 3px;
+			img{
+				margin-top: -8px;
+				padding-right: 9px;
+			}
+			input{
+				background-color: transparent;
+				border: none;
+				margin-top: 18px;
+				padding-left: 14px;
+				border-left: 1px solid $light-gray;
+				&::-webkit-input-placeholder { /* Chrome */
+				  font: $font-extraLight;
+				}
+				&:-ms-input-placeholder { /* IE 10+ */
+				  font: $font-extraLight;
+				}
+				&::-moz-placeholder { /* Firefox 19+ */
+				  font: $font-extraLight;
+				  opacity: 1;
+				}
+				&:-moz-placeholder { /* Firefox 4 - 18 */
+				  font: $font-extraLight;
+				  opacity: 1;
+				}
+			}
+		}
+		.btn-signup{
+			background-color: $purple;
+			color: $font-secondary;
+			border-radius: 25px;
+	    height: 50px;
+	    padding: 10px 35px;
+	    font: $font-thin;
+	    font-size: 14px;
+	    letter-spacing: 1.6px;
+		}
+		.custom-checkbox{
+			margin-top: 30px;
+			.custom-control-description{
+				font: $font-extraLight;
+				padding-top: 10px;
+				padding-left: 15px;
+				font-size: 1rem;
+				a{
+					color: $font-primary;
+				}
+			}
+			.custom-control-indicator{
+				width: 1.5rem;
+				height: 1.5rem;
+				border-radius: 0;
+			}
+			.custom-control-input:checked~.custom-control-indicator {
+		    background-color: $purple !important;
+			}
+		}
+	}
+}
+
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	section.sign-up{
+		padding-bottom: 20px;
+		.title{
+			font-size: 1.2rem;
+		}
+		.signup-form{
+			.flex-col-small{
+				flex-direction: column;
+				.form-group{
+					@include center-content();
+					width: 90%;
+				}
+				.btn-signup{
+					font-weight: 300;
+					width: 90%;
+					@include center-content();
+					margin-top: 40px;
+				}
+			}
+			.custom-checkbox{
+				margin-top: 30px;
+				width: 90%;
+				@include center-content();
+				.custom-control-description{
+					font-size: .8rem;
+					padding-top: 5px;
+					padding-left: 5px;
+					a{
+						color: $font-primary;
+					}
+				}
+				.custom-control-indicator{
+					width: 1.2rem;
+					height: 1.2rem;
+				}
+				.custom-control-input:checked~.custom-control-indicator {
+			    background-color: $purple !important;
+				}
+			}
+		}
+	}
+}

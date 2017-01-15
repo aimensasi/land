@@ -31,6 +31,7 @@
 section.news{
 	padding-top: 50px;
 	padding-bottom: 80px;
+	background-color: $font-secondary;
 	.cover-inverse{
 		background-color: $bg-inverse;
 		.text-block{
@@ -103,20 +104,30 @@ section.news{
 }
 
 
-// .col-md-6{
-// 	width: 555px ; 
-// 	height: 370px ;
-// 	background-color: $bg-inverse;
-// 	padding: 0;
-	
-// 	figure.mask{
-// 		overflow: hidden;
-// 		// position: relative;
-// 		img{
-// 			max-width: 100%;
-// 			max-height: 100%;
-// 			min-height: 100%; 
-// 			// height: 100%;
-// 		}
-// 	}
-// }
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+	section.news{
+		.col-t{
+			order: 1;
+		}
+		.col-b{
+			order: 2;
+		}
+		.cover-inverse{
+			.text-block{
+				padding: 20px;
+				.title.colored{
+					font-size: 0.7rem;
+				}
+				.title-small.h{
+					font-size: 0.8rem;
+				}
+				.title-small{
+					font-size: 0.7rem;
+				}
+			}
+		}
+	}
+}

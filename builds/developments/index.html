@@ -16,7 +16,7 @@
 
       <!-- Header Section -->
       <!-- ==================================================================== -->
-      <header class="row header">
+      <header class="row header" id="top">
         <div class="container">
           <nav class="navbar navbar-toggleable-md navbar-inverse">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -324,7 +324,7 @@
               </div>
             </div>
             <ol class="indicators flex">
-                <li data-target="#people-slides" data-slide-to="0" class="active">
+                <li data-target="#people-slides" data-slide-to="0" class="active ml-a">
                   <img src="images/face1.jpg" alt="avatar" class="rounded-circle avatar-small">
                 </li>
                 <li data-target="#people-slides" data-slide-to="1">
@@ -336,7 +336,7 @@
                 <li data-target="#people-slides" data-slide-to="3">
                   <img src="images/face4.jpg" alt="avatar" class="rounded-circle avatar-small">
                 </li>
-                <li data-target="#people-slides" data-slide-to="4">
+                <li data-target="#people-slides" data-slide-to="4" class="mr-a">
                   <img src="images/face5.jpg" alt="avatar" class="rounded-circle avatar-small">
                 </li>
               </ol>
@@ -375,6 +375,7 @@
         <div class="container">
           <div class="cover-inverse">
             <div class="row">
+              <!-- figure -->
               <div class="col-md-6 px-0">
                 <figure class="mask mb-0">
                   <img src="images/photo_1.jpeg" alt="photo" class="img-mask img-fluid">
@@ -401,7 +402,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 px-0">
+              <div class="col-md-6 px-0 col-b">
                 <div class="text-block">
                   <h2 class="title colored">Featured article</h2>
                   <a href="#" class="link-to title-small h">
@@ -420,7 +421,8 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 px-0">
+              <!-- figure -->
+              <div class="col-md-6 px-0 col-t">
                 <figure class="mask mb-0">
                   <img src="images/photo_2.jpeg" alt="photo" class="img-mask img-fluid">
                 </figure>                
@@ -438,7 +440,7 @@
         <div class="container">
           <h2 class="title">Sign up to receive free updates as soon as they hit!</h2>
           <form action="#" class="signup-form">
-            <div class="flex">
+            <div class="flex flex-col-small">
               <div class="form-group">
                 <img src="images/user.png" alt="User" class="user-icon">
                 <input type="text" class="form-input" placeholder="Your Name" autocomplete="off">
@@ -468,15 +470,15 @@
       <!-- Footer Section -->
       <!-- ==================================================================== -->
       <footer class="row footer">
-        <div class="container">
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-6">
+        <div class="container flex flex-col-small">
+          <div class="col-md-5">
+            <div class="row copy-rights">
+              <div class="col-md-3">
                 <img src="images/logo.png" alt="Logo" class="logo-img">
               </div>
-              <div class="col-md-6">
+              <div class="col-md-9">
                 <p class="leads">
-                  © Land.io 2015. 
+                  © Land.io 2015. <br>
                   Designed by Peter Finlan, developed by Aimen.S.A.Sasi,
                   for practices reasons only.
                 </p>
@@ -485,11 +487,11 @@
           </div>
           <div class="col-md-5 offset-md-3">
             <nav class="navbar navbar-inverse">
-              <div class="navbar-nav">
+              <div class="navbar-nav flex">
                 <a class="nav-item nav-link link-to" href="#"><small>NEW</small> slides</a>
                 <a class="nav-item nav-link link-to" href="#">UI Kit</a>
                 <a class="nav-item nav-link link-to" href="#">Github</a>
-                <a class="nav-item nav-link" href="#">Back To Top</a>
+                <a class="nav-item nav-link back-top" id="back-top" href="#top">Back To Top</a>
               </div>
             </nav>
           </div>
@@ -507,6 +509,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js
     "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script> -->
 
   	<script src="js/script.js"></script>
 

@@ -74,6 +74,14 @@ body {
   display: none;
 }
 
+.ml-a {
+  margin-left: auto !important;
+}
+
+.mr-a {
+  margin-right: auto !important;
+}
+
 header.header {
   background: url("../images/bg-image.png");
   background-repeat: no-repeat;
@@ -773,6 +781,7 @@ section.text .text-row .divider {
 section.news {
   padding-top: 50px;
   padding-bottom: 80px;
+  background-color: #fff;
 }
 section.news .cover-inverse {
   background-color: #312f38;
@@ -840,4 +849,224 @@ section.news .cover-inverse figure.mask:hover img {
 }
 section.news .cover-inverse figure.mask:hover::after {
   opacity: 0;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  section.news .col-t {
+    order: 1;
+  }
+  section.news .col-b {
+    order: 2;
+  }
+  section.news .cover-inverse .text-block {
+    padding: 20px;
+  }
+  section.news .cover-inverse .text-block .title.colored {
+    font-size: 0.7rem;
+  }
+  section.news .cover-inverse .text-block .title-small.h {
+    font-size: 0.8rem;
+  }
+  section.news .cover-inverse .text-block .title-small {
+    font-size: 0.7rem;
+  }
+}
+section.sign-up {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  background-color: #f4f5f7;
+}
+section.sign-up .title {
+  text-align: center;
+  font: 300 1rem "Raleway", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+}
+section.sign-up .signup-form .form-group {
+  background-color: #fff;
+  height: 50px;
+  width: 260px;
+  padding-left: 20px;
+  margin-right: 26px;
+  border-radius: 3px;
+}
+section.sign-up .signup-form .form-group img {
+  margin-top: -8px;
+  padding-right: 9px;
+}
+section.sign-up .signup-form .form-group input {
+  background-color: transparent;
+  border: none;
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 1px solid #eceff3;
+}
+section.sign-up .signup-form .form-group input::-webkit-input-placeholder {
+  /* Chrome */
+  font: 200 1rem "Raleway", sans-serif;
+}
+section.sign-up .signup-form .form-group input:-ms-input-placeholder {
+  /* IE 10+ */
+  font: 200 1rem "Raleway", sans-serif;
+}
+section.sign-up .signup-form .form-group input::-moz-placeholder {
+  /* Firefox 19+ */
+  font: 200 1rem "Raleway", sans-serif;
+  opacity: 1;
+}
+section.sign-up .signup-form .form-group input:-moz-placeholder {
+  /* Firefox 4 - 18 */
+  font: 200 1rem "Raleway", sans-serif;
+  opacity: 1;
+}
+section.sign-up .signup-form .btn-signup {
+  background-color: #6c59b4;
+  color: #fff;
+  border-radius: 25px;
+  height: 50px;
+  padding: 10px 35px;
+  font: 100 1rem "Raleway", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.6px;
+}
+section.sign-up .signup-form .custom-checkbox {
+  margin-top: 30px;
+}
+section.sign-up .signup-form .custom-checkbox .custom-control-description {
+  font: 200 1rem "Raleway", sans-serif;
+  padding-top: 10px;
+  padding-left: 15px;
+  font-size: 1rem;
+}
+section.sign-up .signup-form .custom-checkbox .custom-control-description a {
+  color: #424753;
+}
+section.sign-up .signup-form .custom-checkbox .custom-control-indicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0;
+}
+section.sign-up .signup-form .custom-checkbox .custom-control-input:checked ~ .custom-control-indicator {
+  background-color: #6c59b4 !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  section.sign-up {
+    padding-bottom: 20px;
+  }
+  section.sign-up .title {
+    font-size: 1.2rem;
+  }
+  section.sign-up .signup-form .flex-col-small {
+    flex-direction: column;
+  }
+  section.sign-up .signup-form .flex-col-small .form-group {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  section.sign-up .signup-form .flex-col-small .btn-signup {
+    font-weight: 300;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+  section.sign-up .signup-form .custom-checkbox {
+    margin-top: 30px;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section.sign-up .signup-form .custom-checkbox .custom-control-description {
+    font-size: .8rem;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+  section.sign-up .signup-form .custom-checkbox .custom-control-description a {
+    color: #424753;
+  }
+  section.sign-up .signup-form .custom-checkbox .custom-control-indicator {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  section.sign-up .signup-form .custom-checkbox .custom-control-input:checked ~ .custom-control-indicator {
+    background-color: #6c59b4 !important;
+  }
+}
+footer.footer {
+  background-color: #312f38;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+footer.footer .copy-rights .logo-img {
+  margin-top: 10px;
+}
+footer.footer .copy-rights .leads {
+  color: #fff;
+  font: 300 1rem "Raleway", sans-serif;
+  font-size: .9rem;
+  margin-left: -20px;
+  line-height: 1.5;
+}
+footer.footer .navbar-nav .nav-link {
+  color: #fff;
+  font: 500 1rem "Raleway", sans-serif;
+  margin-right: 20px;
+}
+footer.footer .navbar-nav .back-top {
+  position: relative;
+}
+footer.footer .navbar-nav .back-top::after {
+  content: '^';
+  position: absolute;
+  top: 6px;
+  right: -25px;
+  font-size: 26px;
+  font-weight: 200;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  footer.footer .flex-col-small {
+    flex-direction: column;
+  }
+  footer.footer .flex-col-small .copy-rights {
+    flex-wrap: nowrap;
+  }
+  footer.footer .flex-col-small .copy-rights .col-md-3 {
+    width: 40%;
+    padding: 0;
+  }
+  footer.footer .flex-col-small .copy-rights .col-md-9 {
+    padding-right: 0;
+    width: 100%;
+  }
+  footer.footer .flex-col-small .copy-rights .logo-img {
+    margin-top: 10px;
+  }
+  footer.footer .flex-col-small .copy-rights .leads {
+    font-size: .7rem;
+  }
+  footer.footer .flex-col-small .navbar-nav {
+    flex-direction: column;
+  }
+  footer.footer .flex-col-small .navbar-nav .nav-link {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font: 500 1rem "Raleway", sans-serif;
+    font-size: .9rem;
+  }
+  footer.footer .flex-col-small .navbar-nav .back-top {
+    position: relative;
+  }
+  footer.footer .flex-col-small .navbar-nav .back-top::after {
+    top: 9px;
+    right: 50px;
+    font-size: 18px;
+  }
 }
