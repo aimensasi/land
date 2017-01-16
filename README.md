@@ -12,7 +12,7 @@ Sass
 Bootstrap
 
 
-Site Url:
+Site Url: http://land.io.s3-website-ap-southeast-1.amazonaws.com/
 
 
 ```

@@ -23,7 +23,7 @@ var env,
     imgSrc;
 
 env = process.env.NODE_ENV || 'developments';
-
+// console.log(env);
 if(env === 'developments'){
     outputDir = 'builds/developments';
     sassconfig = 'outputStyle';
@@ -58,26 +58,27 @@ gulp.task('js', function(){
     gulp.src(jsSrc)
         .pipe(concat('script.js'))
         .pipe(browserify())
-        .pipe(gulpIf(env === 'production', uglify()))
+        .pipe(gulpIf(env === 'productions', uglify()))
         .pipe(gulp.dest(outputDir + '/js'))
         .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('html', function(){
-   gulp.src(htmlsrc)
-        .pipe(gulpIf(env === 'production', minifyHtml()))
-        .pipe(gulpIf(env === 'production', gulp.dest(outputDir)))
+    console.log(env);
+    gulp.src(htmlsrc)
+        .pipe(gulpIf(env === 'productions', minifyHtml()))
+        .pipe(gulpIf(env === 'productions', gulp.dest(outputDir)))
         .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('images', function(){
    gulp.src(imgSrc)
-       .pipe(gulpIf(env === 'production', imagemin({
+       .pipe(gulpIf(env === 'productions', imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngCruch()]
         })))
-       .pipe(gulpIf(env === 'production', gulp.dest(outputDir + '/images')))
+       .pipe(gulpIf(env === 'productions', gulp.dest(outputDir + '/images')))
        .pipe(browserSync.reload({stream: true}))
 });
 
